@@ -47,5 +47,9 @@ class Vote {
         return Arrays.toString(_votes);
     }
 
+    public String GetUsername(){
+        return _user;
+    }
+
 
 }

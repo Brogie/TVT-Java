@@ -86,17 +86,41 @@ public class Main {
                 .forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));
 
         //Remove votes where one user has voted multiple times
+        List<String> UsernameCount = new ArrayList<>();
+        List<String> MultipleCountFound = new ArrayList<>();
 
+        for (Vote v :
+                Votes) {
+            //increment similar votes
+            if(UsernameCount.contains(v.GetUsername())){
+                if(!MultipleCountFound.contains(v.GetUsername())){
+                    MultipleCountFound.add(v.GetUsername());
+                }
+            } else {
+                UsernameCount.add(v.GetUsername());
+            }
+        }
+
+        //Finally invalidate multiple voter votes
+        for (Vote v:
+             Votes) {
+            if(MultipleCountFound.contains(v.GetUsername())){
+                v.Invalidate("Voter voted multiple times with the same username");
+            }
+        }
     }
 
     private static void LoadVotes(String voteFileLocation, List<Vote> votes) {
         System.out.print("Loading Votes: ");
 
+        //Simple CSV reader
         BufferedReader br;
         String line;
 
         try {
             br = new BufferedReader(new FileReader(voteFileLocation));
+
+            //Read past header
             br.readLine();
 
             while ((line = br.readLine()) != null) {
