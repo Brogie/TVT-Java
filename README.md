@@ -9,3 +9,6 @@ Simple commandline program with basic commands
 -p for the votes CSV
 
 -w true/false for weighted votes
+
+##Example
+https://www.reddit.com/r/tea/wiki/vendors/page_01
