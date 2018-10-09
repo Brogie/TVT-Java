@@ -7,3 +7,5 @@ Simple commandline program with basic commands
 -v for the vendor CSV
 
 -p for the votes CSV
+
+-w true/false for weighted votes
