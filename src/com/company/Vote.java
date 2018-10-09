@@ -51,5 +51,21 @@ class Vote {
         return _user;
     }
 
+    public String GetFirst(){
+        return _votes[0];
+    }
+    public String GetSecond(){
+        return _votes[1];
+    }
+    public String GetThird(){
+        return _votes[2];
+    }
+    public String GetRunner1(){
+        return _votes[3];
+    }
+    public String GetRunner2(){
+        return _votes[4];
+    }
+
 
 }

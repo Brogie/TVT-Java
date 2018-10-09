@@ -11,7 +11,7 @@ public class Main {
         String VendorFileLocation = "";
         String VoteFileLocation = "";
         //Data
-        List<Vendor> Vendors = new ArrayList<>();
+        Map<String,Vendor> Vendors = new HashMap<>();
         List<Vote> Votes = new ArrayList<>();
 
 
@@ -55,11 +55,34 @@ public class Main {
         VerifyVotes(Votes);
 
         //Tally Votes
-
+        TallyVotes(Votes, Vendors, false);
 
         //Sort votes
 
         //Write Table
+    }
+
+    private static void TallyVotes(List<Vote> Votes, Map<String, Vendor> Vendors, Boolean Weighted){
+        //Add points
+        for (Vote v :
+                Votes) {
+            if(Vendors.containsKey(v.GetFirst())){
+                Vendors.get(v.GetFirst()).AddPoints(Weighted?5:1);
+            }
+            if(Vendors.containsKey(v.GetSecond())){
+                Vendors.get(v.GetSecond()).AddPoints(Weighted?4:1);
+            }
+            if(Vendors.containsKey(v.GetThird())){
+                Vendors.get(v.GetThird()).AddPoints(Weighted?3:1);
+            }
+            if(Vendors.containsKey(v.GetRunner1())){
+                Vendors.get(v.GetRunner1()).AddPoints(Weighted?1:1);
+            }
+            if(Vendors.containsKey(v.GetRunner2())){
+                Vendors.get(v.GetRunner2()).AddPoints(Weighted?1:1);
+            }
+        }
+
     }
 
     private static void VerifyVotes(List<Vote> Votes) {
@@ -135,7 +158,7 @@ public class Main {
         System.out.println("[" + votes.size() + "]");
     }
 
-    private static void LoadVendors(List<Vendor> Vendors, String FileLocation) {
+    private static void LoadVendors(Map<String, Vendor> Vendors, String FileLocation) {
         System.out.print("Loading Vendors: ");
 
         //Load Vendors
@@ -152,7 +175,7 @@ public class Main {
                 name = name.replaceAll("\\[", "");
                 name = name.replaceAll("]", "");
 
-                Vendors.add(new Vendor(name, Data[0], Data[1], Data[2], Data[3]));
+                Vendors.put(name, new Vendor(name, Data[0], Data[1], Data[2], Data[3]));
             }
         } catch (IOException e) {
             e.printStackTrace();
