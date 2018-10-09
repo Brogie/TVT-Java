@@ -16,6 +16,7 @@ public class Main {
         //Data
         Map<String,Vendor> Vendors = new HashMap<>();
         List<Vote> Votes = new ArrayList<>();
+        Boolean Weighted = true;
 
 
         //Read Arguments
@@ -34,6 +35,15 @@ public class Main {
                         break;
                     case 'p':
                         VoteFileLocation = args[i];
+                        break;
+                    case 'w':
+                        if(args[i].toLowerCase().equals("true")){
+                            Weighted = true;
+                        } else if (args[i].toLowerCase().equals("false")){
+                            Weighted = false;
+                        } else {
+                            System.out.println("Weighting not defined: [Defaulting to true]");
+                        }
                         break;
 
                 }
@@ -58,7 +68,7 @@ public class Main {
         VerifyVotes(Votes);
 
         //Tally Votes
-        TallyVotes(Votes, Vendors, false);
+        TallyVotes(Votes, Vendors, Weighted);
 
         //Sort votes
         Vendors = SortVendors(Vendors);
@@ -83,6 +93,7 @@ public class Main {
     }
 
     private static String GenerateTable(Map<String, Vendor> Vendors){
+        System.out.print("Generating Tables: ");
         String Voted = "Rank | Vendor/Website Link | Reddit User / Vendor Comments | Shipping Origin | Shipping Range\n---------|---------|---------|---------|---------\n";
         String Unvoted = "Vendor/Website Link | Reddit User / Vendor Comments | Shipping Origin | Shipping Range\n---------|---------|---------|---------\n";
         int CurrentRank = 1;
@@ -124,6 +135,8 @@ public class Main {
         output += "\n\n##Additional Vendors\n\n";
         output += Unvoted;
 
+        System.out.println("[Done]");
+
         return output;
     }
 
@@ -149,10 +162,12 @@ public class Main {
             sortedMap.put(entry.getKey(), entry.getValue());
         }
 
+        System.out.println("Sorting Votes: [Done]");
         return sortedMap;
     }
 
     private static void TallyVotes(List<Vote> Votes, Map<String, Vendor> Vendors, Boolean Weighted){
+        System.out.println("Tallying votes: [Weighted = " + Boolean.toString(Weighted) + "]");
         List<String> Unmatched = new ArrayList<>();
 
         //Add points
