@@ -1,5 +1,7 @@
 package com.company;
 
+import com.sun.jdi.Value;
+
 import java.io.*;
 import java.util.*;
 
@@ -58,12 +60,62 @@ public class Main {
         TallyVotes(Votes, Vendors, false);
 
         //Sort votes
-        SortVendors(Vendors);
+        Vendors = SortVendors(Vendors);
+
         //Write Table
+        GenerateTable(Vendors);
+
+    }
+
+    private static String GenerateTable(Map<String, Vendor> Vendors){
+        String Voted = "Rank | Vendor/Website Link | Reddit User / Vendor Comments | Shipping Origin | Shipping Range\n---------|---------|---------|---------|---------\n";
+        String Unvoted = "Vendor/Website Link | Reddit User / Vendor Comments | Shipping Origin | Shipping Range\n---------|---------|---------|---------\n";
+        int CurrentRank = 1;
+        Boolean DrawRank = true;
+
+        Vendor prevVendor = null;
+
+        //Iterate through the vendor list
+        for(Map.Entry<String,Vendor> entry : Vendors.entrySet()) {
+            Vendor value = entry.getValue();
+
+            //see if points are tied
+            if(prevVendor != null){
+                if(value.GetPoints() != prevVendor.GetPoints()){
+                    DrawRank = true;
+                    CurrentRank++;
+                } else {
+                    DrawRank = false;
+                }
+            }
+
+            if(value.GetPoints() > 0){
+                if(DrawRank){
+                    Voted += Integer.toString(CurrentRank) + " | " + value.toString() + "\n";
+                } else {
+                    Voted += "- | " + value.toString() + "\n";
+                }
+            } else {
+                Unvoted += value.toString() + "\n";
+            }
+
+
+            prevVendor = value;
+        }
+
+        System.out.print(Voted);
+
+        String output;
+        output = "##User choice\nThe shipping origin and shipping range will be filled in over time, once completed regional lists will be made available. If you want to help please message the moderators.\n\n";
+        output += Voted;
+        output += "\n\n##Additional Vendors\n\n";
+        output += Unvoted;
+
+        return output;
     }
 
     /* Uses https://www.mkyong.com/java/how-to-sort-a-map-in-java/ */
-    private static void SortVendors(Map<String, Vendor> Vendors){
+    private static Map<String, Vendor> SortVendors(Map<String, Vendor> Vendors){
         // 1. Convert Map to List of Map
         List<Map.Entry<String, Vendor>> list =
                 new LinkedList<Map.Entry<String, Vendor>>(Vendors.entrySet());
@@ -84,6 +136,7 @@ public class Main {
             sortedMap.put(entry.getKey(), entry.getValue());
         }
 
+        return sortedMap;
     }
 
     private static void TallyVotes(List<Vote> Votes, Map<String, Vendor> Vendors, Boolean Weighted){

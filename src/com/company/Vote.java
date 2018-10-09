@@ -33,7 +33,17 @@ class Vote {
 
         _user = User;
 
-        _votes = Votes;
+        //If user voted for the same vendor multiple times in the same vote reject the lower vote
+        List<String> Voted = new ArrayList<>();
+
+        _votes = new String[Votes.length];
+
+        for (int i = 0; i < Votes.length; i++) {
+            if(!Voted.contains(Votes[i])){
+                _votes[i] = Votes[i];
+            }
+        }
+
         Valid = true;
         InvalidationReason = new ArrayList<>();
     }

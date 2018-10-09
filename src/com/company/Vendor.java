@@ -30,8 +30,10 @@ public class Vendor implements Comparable<Vendor> {
         return _points;
     }
 
-    public String ToString(){
+    //in format "Vendor/Website Link | Reddit User / Vendor Comments | Shipping Origin | Shipping Range"
+    @Override
+    public String toString(){
 
-        return "Not Implemented";
+        return _links + " | " + _quote + " | " + _origin + " | " + _range;
     }
 }
