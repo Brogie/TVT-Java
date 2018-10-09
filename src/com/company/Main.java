@@ -63,26 +63,49 @@ public class Main {
     }
 
     private static void TallyVotes(List<Vote> Votes, Map<String, Vendor> Vendors, Boolean Weighted){
+        List<String> Unmatched = new ArrayList<>();
+
         //Add points
         for (Vote v :
                 Votes) {
             if(Vendors.containsKey(v.GetFirst())){
                 Vendors.get(v.GetFirst()).AddPoints(Weighted?5:1);
+            } else {
+                Unmatched.add(v.GetFirst());
             }
+
             if(Vendors.containsKey(v.GetSecond())){
                 Vendors.get(v.GetSecond()).AddPoints(Weighted?4:1);
+            } else {
+                Unmatched.add(v.GetSecond());
             }
+
             if(Vendors.containsKey(v.GetThird())){
                 Vendors.get(v.GetThird()).AddPoints(Weighted?3:1);
+            } else {
+                Unmatched.add(v.GetThird());
             }
+
             if(Vendors.containsKey(v.GetRunner1())){
                 Vendors.get(v.GetRunner1()).AddPoints(Weighted?1:1);
+            } else {
+                Unmatched.add(v.GetRunner1());
             }
+
             if(Vendors.containsKey(v.GetRunner2())){
                 Vendors.get(v.GetRunner2()).AddPoints(Weighted?1:1);
+            } else {
+                Unmatched.add(v.GetRunner2());
             }
         }
 
+        //Print unmatched vendors (meaning error in vendor list
+        for (String Vendor:
+            Unmatched) {
+            if(Vendor != null && !Vendor.equals("")){
+                System.out.println("Error: " + Vendor + " is not recognised, fix the vendor list to account for this vote");
+            }
+        }
     }
 
     private static void VerifyVotes(List<Vote> Votes) {
