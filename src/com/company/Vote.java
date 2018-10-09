@@ -9,7 +9,7 @@ class Vote {
     private Date _voteTime;
     private String _user;
     private String[] _votes;
-    private Boolean Valid;
+    private Boolean _valid;
     private List<String> InvalidationReason;
 
     public Vote(String VoteTime, String User, String[] Votes){
@@ -44,17 +44,32 @@ class Vote {
             }
         }
 
-        Valid = true;
+        _valid = true;
         InvalidationReason = new ArrayList<>();
     }
 
     public void Invalidate(String Reason){
-        Valid = false;
+        _valid = false;
         InvalidationReason.add(Reason);
+    }
+
+    public  String GetReason(){
+        String output = "";
+
+        for (String s :
+                InvalidationReason) {
+            output += s + ", ";
+        }
+
+        return output.equals("")? "Vote is valid":output;
     }
 
     public String Key(){
         return Arrays.toString(_votes);
+    }
+
+    public Boolean IsValid(){
+        return _valid;
     }
 
     public String GetUsername(){

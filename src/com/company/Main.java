@@ -64,14 +64,14 @@ public class Main {
         Vendors = SortVendors(Vendors);
 
         //Write Table
-        WriteFile(GenerateTable(Vendors));
+        WriteFile(GenerateTable(Vendors),  "Table.txt");
 
     }
 
-    private static void WriteFile(String Contents){
+    private static void WriteFile(String Contents, String FileName){
         PrintWriter writer = null;
         try {
-            writer = new PrintWriter("Table.txt", "UTF-8");
+            writer = new PrintWriter(FileName, "UTF-8");
             writer.print(Contents);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -199,6 +199,7 @@ public class Main {
     }
 
     private static void VerifyVotes(List<Vote> Votes) {
+        System.out.print("Verifying Votes: ");
         //Find repetitive votes which could indicate vote stuffing
         Map<String, Integer> RepetitivenessCount = new HashMap<>();
 
@@ -244,6 +245,36 @@ public class Main {
                 v.Invalidate("Voter voted multiple times with the same username");
             }
         }
+
+        //Generate a Vote report
+        
+        //Print invalidated Users
+        String InvalidatedUsers = "";
+        String RepeatVotes = "";
+
+        int InvalidUserCount = 0;
+        int RepeatVoteCount = 0;
+
+        for (Vote v :
+                Votes) {
+            if(!v.IsValid()){
+                InvalidatedUsers += v.GetUsername() + ": " + v.GetReason() + "\n";
+                InvalidUserCount++;
+            }
+        }
+        
+        //Print suspicious votes
+        for(Map.Entry<String,Integer> entry : reverseSortedMap.entrySet()){
+            if(entry.getValue() > 2){
+                RepeatVotes += "Amount: " + entry.getValue() + " Vote Type: " + entry.getKey() + "\n";
+                RepeatVoteCount += entry.getValue();
+            }
+        }
+
+        //Output report
+        WriteFile("[Invalidated votes]\n" + InvalidatedUsers + "\n\n[Repetitive votes (Please review)]\n" + RepeatVotes, "VoteReport.txt");
+
+        System.out.println("[Rejected votes: " + Integer.toString(InvalidUserCount) + "] [Suspicious Votes: " + Integer.toString(RepeatVoteCount) + "]");
     }
 
     private static void LoadVotes(String voteFileLocation, List<Vote> votes) {

@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="347c562c-c749-486c-a1d6-c4e586d33c8d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TeaTally/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeaTally/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TeaTally/com/company/Vote.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeaTally/com/company/Vote.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Vote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Vote.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,12 +42,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="6972" />
+          <entry key="java" value="7961" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6972" />
+          <entry key="JAVA" value="7961" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -63,15 +67,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="72" column="13" lean-forward="true" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
+            <state relative-caret-position="189">
+              <caret line="96" column="36" selection-start-line="96" selection-start-column="36" selection-end-line="96" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#SortVendors#0;class#Main#0" />
                 <element signature="e#1934#1961#0" expanded="true" />
                 <element signature="e#2569#2585#0" expanded="true" />
                 <element signature="method#TallyVotes#0;class#Main#0" />
-                <element signature="method#VerifyVotes#0;class#Main#0" />
                 <element signature="method#LoadVotes#0;class#Main#0" />
                 <element signature="method#LoadVendors#0;class#Main#0" />
               </folding>
@@ -82,12 +85,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Vote.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+            <state relative-caret-position="731">
+              <caret line="56" column="27" lean-forward="true" selection-start-line="56" selection-start-column="27" selection-end-line="56" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#971#972#0" expanded="true" />
                 <element signature="e#1017#1018#0" expanded="true" />
+                <element signature="e#1550#1551#0" expanded="true" />
+                <element signature="e#1578#1579#0" expanded="true" />
                 <element signature="e#1228#1229#0" expanded="true" />
                 <element signature="e#1255#1256#0" expanded="true" />
                 <element signature="e#1287#1288#0" expanded="true" />
@@ -206,7 +211,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539090413843" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539093709744" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -247,12 +252,12 @@
       <updated>1538992476691</updated>
       <workItem from="1538992479171" duration="17143000" />
       <workItem from="1539012548247" duration="118000" />
-      <workItem from="1539014627646" duration="17608000" />
+      <workItem from="1539014627646" duration="20599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34869000" />
+    <option name="totallyTimeSpent" value="37860000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-47" y="-1440" width="2560" height="1440" extended-state="0" />
@@ -302,12 +307,6 @@
           <line>68</line>
           <properties />
           <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/Main.java</url>
-          <line>128</line>
-          <properties />
-          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -367,12 +366,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Vote.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+        <state relative-caret-position="731">
+          <caret line="56" column="27" lean-forward="true" selection-start-line="56" selection-start-column="27" selection-end-line="56" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#971#972#0" expanded="true" />
             <element signature="e#1017#1018#0" expanded="true" />
+            <element signature="e#1550#1551#0" expanded="true" />
+            <element signature="e#1578#1579#0" expanded="true" />
             <element signature="e#1228#1229#0" expanded="true" />
             <element signature="e#1255#1256#0" expanded="true" />
             <element signature="e#1287#1288#0" expanded="true" />
@@ -391,15 +392,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="72" column="13" lean-forward="true" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
+        <state relative-caret-position="189">
+          <caret line="96" column="36" selection-start-line="96" selection-start-column="36" selection-end-line="96" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#SortVendors#0;class#Main#0" />
             <element signature="e#1934#1961#0" expanded="true" />
             <element signature="e#2569#2585#0" expanded="true" />
             <element signature="method#TallyVotes#0;class#Main#0" />
-            <element signature="method#VerifyVotes#0;class#Main#0" />
             <element signature="method#LoadVotes#0;class#Main#0" />
             <element signature="method#LoadVendors#0;class#Main#0" />
           </folding>
