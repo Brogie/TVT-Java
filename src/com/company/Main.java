@@ -3,6 +3,7 @@ package com.company;
 import com.sun.jdi.Value;
 
 import java.io.*;
+import java.net.FileNameMap;
 import java.util.*;
 
 public class Main {
@@ -63,8 +64,22 @@ public class Main {
         Vendors = SortVendors(Vendors);
 
         //Write Table
-        GenerateTable(Vendors);
+        WriteFile(GenerateTable(Vendors));
 
+    }
+
+    private static void WriteFile(String Contents){
+        PrintWriter writer = null;
+        try {
+            writer = new PrintWriter("Table.txt", "UTF-8");
+            writer.print(Contents);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } finally {
+            writer.close();
+        }
     }
 
     private static String GenerateTable(Map<String, Vendor> Vendors){
@@ -102,8 +117,6 @@ public class Main {
 
             prevVendor = value;
         }
-
-        System.out.print(Voted);
 
         String output;
         output = "##User choice\nThe shipping origin and shipping range will be filled in over time, once completed regional lists will be made available. If you want to help please message the moderators.\n\n";
