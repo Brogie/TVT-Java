@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="347c562c-c749-486c-a1d6-c4e586d33c8d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Vendor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Vendor.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,12 +39,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="5086" />
+          <entry key="java" value="5488" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="5086" />
+          <entry key="JAVA" value="5488" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -63,11 +64,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="769">
-              <caret line="104" column="16" selection-start-line="104" selection-start-column="16" selection-end-line="104" selection-end-column="16" />
+            <state relative-caret-position="1095">
+              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#VerifyVotes#0;class#Main#0" />
+                <element signature="e#1934#1961#0" expanded="true" />
+                <element signature="e#2569#2585#0" expanded="true" />
                 <element signature="method#LoadVotes#0;class#Main#0" />
               </folding>
             </state>
@@ -113,7 +115,13 @@
         <entry file="file://$PROJECT_DIR$/src/com/company/Vendor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+              <folding>
+                <element signature="e#636#637#0" expanded="true" />
+                <element signature="e#703#704#0" expanded="true" />
+                <element signature="e#739#740#0" expanded="true" />
+                <element signature="e#769#770#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -133,9 +141,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/company/Vendor.java" />
         <option value="$PROJECT_DIR$/src/com/company/Utilities.java" />
         <option value="$PROJECT_DIR$/src/com/company/Vote.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Vendor.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
       </list>
     </option>
@@ -223,12 +231,12 @@
       <updated>1538992476691</updated>
       <workItem from="1538992479171" duration="17143000" />
       <workItem from="1539012548247" duration="118000" />
-      <workItem from="1539014627646" duration="9142000" />
+      <workItem from="1539014627646" duration="10711000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26403000" />
+    <option name="totallyTimeSpent" value="27972000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-47" y="-1440" width="2560" height="1440" extended-state="0" />
@@ -281,15 +289,9 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/Main.java</url>
-          <line>108</line>
+          <line>86</line>
           <properties />
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/Main.java</url>
-          <line>105</line>
-          <properties />
-          <option name="timeStamp" value="26" />
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -350,17 +352,24 @@
     <entry file="file://$PROJECT_DIR$/src/com/company/Vendor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding>
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#703#704#0" expanded="true" />
+            <element signature="e#739#740#0" expanded="true" />
+            <element signature="e#769#770#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="769">
-          <caret line="104" column="16" selection-start-line="104" selection-start-column="16" selection-end-line="104" selection-end-column="16" />
+        <state relative-caret-position="1095">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#VerifyVotes#0;class#Main#0" />
+            <element signature="e#1934#1961#0" expanded="true" />
+            <element signature="e#2569#2585#0" expanded="true" />
             <element signature="method#LoadVotes#0;class#Main#0" />
           </folding>
         </state>

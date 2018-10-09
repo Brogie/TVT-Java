@@ -58,8 +58,32 @@ public class Main {
         TallyVotes(Votes, Vendors, false);
 
         //Sort votes
-
+        SortVendors(Vendors);
         //Write Table
+    }
+
+    /* Uses https://www.mkyong.com/java/how-to-sort-a-map-in-java/ */
+    private static void SortVendors(Map<String, Vendor> Vendors){
+        // 1. Convert Map to List of Map
+        List<Map.Entry<String, Vendor>> list =
+                new LinkedList<Map.Entry<String, Vendor>>(Vendors.entrySet());
+
+        // 2. Sort list with Collections.sort(), provide a custom Comparator
+        //    Try switch the o1 o2 position for a different order
+        Collections.sort(list, new Comparator<Map.Entry<String, Vendor>>() {
+
+            public int compare(Map.Entry<String, Vendor> o1,
+                               Map.Entry<String, Vendor> o2) {
+                return (o2.getValue()).compareTo(o1.getValue());
+            }
+        });
+
+        // 3. Loop the sorted list and put it into a new insertion order Map LinkedHashMap
+        Map<String, Vendor> sortedMap = new LinkedHashMap<String, Vendor>();
+        for (Map.Entry<String, Vendor> entry : list) {
+            sortedMap.put(entry.getKey(), entry.getValue());
+        }
+
     }
 
     private static void TallyVotes(List<Vote> Votes, Map<String, Vendor> Vendors, Boolean Weighted){

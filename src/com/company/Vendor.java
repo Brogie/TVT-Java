@@ -1,6 +1,6 @@
 package com.company;
 
-public class Vendor {
+public class Vendor implements Comparable<Vendor> {
     private String _links;
     private String _name;
     private int _points;
@@ -19,6 +19,15 @@ public class Vendor {
 
     public void AddPoints(int Points){
         _points += Points;
+    }
+
+    @Override
+    public int compareTo(final Vendor a){
+        return Integer.compare( this._points, a.GetPoints());
+    }
+
+    protected int GetPoints(){
+        return _points;
     }
 
     public String ToString(){
