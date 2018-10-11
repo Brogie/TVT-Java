@@ -11,7 +11,6 @@ class Vote {
     private String[] _votes;
     private Boolean _valid;
     private List<String> InvalidationReason;
-
     public Vote(String VoteTime, String User, String[] Votes){
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 
