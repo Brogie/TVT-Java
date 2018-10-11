@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="TeaTally" target="1.5" />
+      <module name="TeaTally" target="1.11" />
     </bytecodeTargetLevel>
   </component>
 </project>

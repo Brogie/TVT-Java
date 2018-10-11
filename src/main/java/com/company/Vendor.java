@@ -1,39 +1,39 @@
 package com.company;
 
 public class Vendor implements Comparable<Vendor> {
-    private String _links;
-    private String _name;
-    private int _points;
-    private String _quote;
-    private String _origin;
-    private String _range;
-    private int _change;
+    private String links;
+    private String name;
+    private int points;
+    private String quote;
+    private String origin;
+    private String range;
+    private int change;
 
     public Vendor(String Name, String Links, String Quote, String Origin, String Range){
-        _name = Name.strip();
-        _links = Links.strip();
-        _quote = Quote.strip();
-        _origin = Origin.strip();
-        _range = Range.strip();
+        name = Name.strip();
+        links = Links.strip();
+        quote = Quote.strip();
+        origin = Origin.strip();
+        range = Range.strip();
     }
 
     public void AddPoints(int Points){
-        _points += Points;
+        points += Points;
     }
 
     @Override
     public int compareTo(final Vendor a){
-        return Integer.compare( this._points, a.GetPoints());
+        return Integer.compare( this.points, a.GetPoints());
     }
 
     protected int GetPoints(){
-        return _points;
+        return points;
     }
 
     //in format "Vendor/Website Link | Reddit User / Vendor Comments | Shipping Origin | Shipping Range"
     @Override
     public String toString(){
 
-        return _links + " | " + _quote + " | " + _origin + " | " + _range;
+        return links + " | " + quote + " | " + origin + " | " + range;
     }
 }
