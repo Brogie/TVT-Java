@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="TeaTally:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/TeaTally_jar</output-path>
-    <root id="archive" name="TeaTally.jar">
-      <element id="module-output" name="TeaTally" />
-    </root>
-  </artifact>
-</component>
