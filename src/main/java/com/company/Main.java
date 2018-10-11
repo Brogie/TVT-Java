@@ -97,7 +97,7 @@ public class Main {
         String Voted = "Rank | Vendor/Website Link | Reddit User / Vendor Comments | Shipping Origin | Shipping Range\n---------|---------|---------|---------|---------\n";
         String Unvoted = "Vendor/Website Link | Reddit User / Vendor Comments | Shipping Origin | Shipping Range\n---------|---------|---------|---------\n";
         int CurrentRank = 1;
-        Boolean DrawRank = true;
+        boolean DrawRank = true;
 
         Vendor prevVendor = null;
 
